@@ -45,8 +45,7 @@ export default function Contacto() {
                 <p className="text-gray-600">
                   <a href="tel:43814939" className="hover:text-medical-dark transition-colors">
                     4381-4939
-                  </a><br />
-                  Atención: Lunes a Viernes 9:00-18:00
+                  </a>
                 </p>
               </div>
             </div>
@@ -68,18 +67,7 @@ export default function Contacto() {
               </div>
             </div>
 
-            {/* WhatsApp CTA */}
-            <div className="mt-8 pt-8 border-t border-medical-gray">
-              <p className="text-gray-600 mb-4">¿Tienes una consulta rápida?</p>
-              <Button
-                variant="whatsapp"
-                size="lg"
-                className="w-full"
-                onClick={() => window.open('https://wa.me/5491234567890', '_blank')}
-              >
-                Escribir por WhatsApp
-              </Button>
-            </div>
+
           </div>
 
           {/* Mapa Interactivo */}
@@ -116,15 +104,15 @@ export default function Contacto() {
               <h3 className="font-semibold text-medical-dark mb-3">Horario de atención</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
-                  <span>Lunes a Viernes:</span>
-                  <span className="font-medium text-medical-dark">9:00 - 18:00</span>
+                  <span>Lunes a Jueves:</span>
+                  <span className="font-medium text-medical-dark">10:00 - 16:30</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Sábado:</span>
-                  <span className="font-medium text-medical-dark">9:00 - 13:00</span>
+                  <span>Viernes:</span>
+                  <span className="font-medium text-medical-dark">10:00 - 14:00</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Domingo:</span>
+                  <span>Sábado y Domingo:</span>
                   <span className="font-medium text-medical-dark">Cerrado</span>
                 </li>
               </ul>

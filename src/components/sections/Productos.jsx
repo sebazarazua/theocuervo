@@ -5,31 +5,37 @@ export default function Productos() {
     {
       title: 'Sillas de Ruedas',
       description: 'Amplia variedad de sillas de ruedas manuales y eléctricas adaptadas a tus necesidades',
+      image: '/images/sillas-de-ruedas.png',
       icon: '♿',
     },
     {
       title: 'Ayudas para Caminar',
       description: 'Muletas, bastones y andadores de última tecnología para tu movilidad',
+      image: '/images/ayudas-caminar.png',
       icon: '🚶',
     },
     {
       title: 'Productos para Baño',
       description: 'Accesorios y sistemas de seguridad para el baño adaptados',
+      image: '/images/productos-bano.png',
       icon: '🛁',
     },
     {
       title: 'Insumos Médicos',
       description: 'Vendajes, soportes ortopédicos y equipamiento médico especializado',
+      image: '/images/insumos-medicos.png',
       icon: '⚕️',
     },
     {
       title: 'Dormitorio y Rehabilitación',
       description: 'Camas especiales, almohadas ortopédicas y equipos de rehabilitación',
+      image: '/images/dormitorio-rehabilitacion.png',
       icon: '🛏️',
     },
     {
       title: 'Accesorios Ortopédicos',
       description: 'Completo catálogo de accesorios y componentes especializados',
+      image: '/images/accesorios-ortopedicos.png',
       icon: '🔧',
     },
   ];
@@ -56,9 +62,17 @@ export default function Productos() {
               className="flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-300 animate-fade-in-up"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
-              {/* Placeholder Imagen */}
-              <div className="w-full h-48 bg-medical-light flex items-center justify-center border-b border-medical-gray">
-                <div className="text-6xl opacity-30">{category.icon}</div>
+              {/* Imagen del Producto */}
+              <div className="w-full h-48 bg-medical-light flex items-center justify-center border-b border-medical-gray overflow-hidden">
+                {category.image ? (
+                  <img 
+                    src={category.image} 
+                    alt={category.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="text-6xl opacity-30">{category.icon}</div>
+                )}
               </div>
 
               {/* Contenido */}

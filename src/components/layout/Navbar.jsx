@@ -36,16 +36,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* WhatsApp Button */}
-          <div className="hidden md:block">
-            <Button 
-              variant="whatsapp" 
-              size="sm"
-              onClick={() => window.open('https://wa.me/5491234567890', '_blank')}
-            >
-              WhatsApp
-            </Button>
-          </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -75,16 +66,7 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-            <div className="px-3 py-2 mt-4">
-              <Button 
-                variant="whatsapp" 
-                size="sm"
-                className="w-full"
-                onClick={() => window.open('https://wa.me/5491234567890', '_blank')}
-              >
-                WhatsApp
-              </Button>
-            </div>
+
           </div>
         )}
       </div>
