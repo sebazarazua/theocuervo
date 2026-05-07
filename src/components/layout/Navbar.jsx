@@ -8,19 +8,21 @@ export default function Navbar() {
     { label: 'Inicio', href: '#inicio' },
     { label: 'Nosotros', href: '#nosotros' },
     { label: 'Productos', href: '#productos' },
-    { label: 'Obras Sociales', href: '#obras-sociales' },
+    { label: 'Clientes', href: '#obras-sociales' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-medical-gray">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between py-2">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-xl lg:text-2xl font-bold text-medical-dark tracking-tight">
-              ORTOPEDIA BOURBON
-            </h1>
+          <div className="flex-shrink-0 flex items-center">
+            <img 
+              src="/images/logo.png" 
+              alt="Ortopedia Bourbon Logo"
+              className="h-32 w-auto"
+            />
           </div>
 
           {/* Desktop Menu */}
@@ -29,7 +31,7 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 hover:text-medical-dark transition-colors duration-300 font-medium text-sm"
+                className="text-gray-700 hover:text-medical-dark transition-colors duration-300 font-bold text-base uppercase"
               >
                 {item.label}
               </a>
@@ -60,7 +62,7 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-medical-light hover:text-medical-dark transition-colors"
+                className="block px-3 py-2 rounded-lg text-gray-700 hover:bg-medical-light hover:text-medical-dark transition-colors font-bold uppercase"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}

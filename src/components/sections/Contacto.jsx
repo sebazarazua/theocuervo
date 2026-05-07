@@ -67,7 +67,31 @@ export default function Contacto() {
               </div>
             </div>
 
-
+            {/* Horario de Atención */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-medical-light">
+                  <span className="text-xl">🕐</span>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-medical-dark mb-2">Horario de atención</h3>
+                <ul className="space-y-1">
+                  <li className="text-gray-600 text-sm">
+                    <span>Lunes a Jueves:</span>
+                    <span className="font-medium text-medical-dark ml-2">10:00 - 16:30</span>
+                  </li>
+                  <li className="text-gray-600 text-sm">
+                    <span>Viernes:</span>
+                    <span className="font-medium text-medical-dark ml-2">10:00 - 14:00</span>
+                  </li>
+                  <li className="text-gray-600 text-sm">
+                    <span>Sábado y Domingo:</span>
+                    <span className="font-medium text-medical-dark ml-2">Cerrado</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Mapa Interactivo */}
@@ -86,36 +110,32 @@ export default function Contacto() {
               />
             </div>
 
-            {/* Botón Cómo Llegar */}
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full"
-              onClick={() => window.open(
-                'https://www.google.com/maps/place/Ortopedia+Bourbon/@-34.60546,-58.38073,15z',
-                '_blank'
-              )}
-            >
-              Cómo llegar →
-            </Button>
-
-            {/* Info adicional */}
-            <div className="p-6 bg-medical-light rounded-xl border border-medical-gray">
-              <h3 className="font-semibold text-medical-dark mb-3">Horario de atención</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex justify-between">
-                  <span>Lunes a Jueves:</span>
-                  <span className="font-medium text-medical-dark">10:00 - 16:30</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Viernes:</span>
-                  <span className="font-medium text-medical-dark">10:00 - 14:00</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Sábado y Domingo:</span>
-                  <span className="font-medium text-medical-dark">Cerrado</span>
-                </li>
-              </ul>
+            {/* Google Maps Rating Display */}
+            <div className="w-full bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-medical-gray p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-medical-dark">Google Maps</span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="text-4xl font-bold text-medical-dark">5.0</span>
+                  <div className="flex gap-1">
+                    <span className="text-2xl text-yellow-400">★</span>
+                    <span className="text-2xl text-yellow-400">★</span>
+                    <span className="text-2xl text-yellow-400">★</span>
+                    <span className="text-2xl text-yellow-400">★</span>
+                    <span className="text-2xl text-yellow-400">★</span>
+                  </div>
+                </div>
+                <p className="text-gray-600 text-sm">Calificación de Ortopedia Bourbon</p>
+                <a 
+                  href="https://maps.app.goo.gl/ehtuLhQnMTMjpggq9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 px-4 py-2 text-medical-dark hover:text-white bg-medical-light hover:bg-medical-dark rounded-lg transition-colors text-sm font-medium"
+                >
+                  Abrir en Google Maps →
+                </a>
+              </div>
             </div>
           </div>
         </div>
