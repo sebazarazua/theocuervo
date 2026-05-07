@@ -19,31 +19,31 @@ export default function Nosotros() {
   ];
 
   return (
-    <section id="nosotros" className="py-20 lg:py-32 bg-medical-light">
+    <section id="nosotros" className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Placeholder Visual Izquierda */}
-          <div className="flex items-center justify-center animate-fade-in order-2 lg:order-1">
-            <div className="w-full aspect-square lg:aspect-auto lg:h-[400px] bg-white rounded-2xl flex items-center justify-center border border-medical-gray shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="text-center">
-                <div className="text-6xl mb-4 opacity-20">🏥</div>
-                <p className="text-gray-400 text-lg">Imagen institucional</p>
-                <p className="text-gray-300 text-sm mt-2">Equipo y especialistas</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contenido Derecha */}
-          <div className="order-1 lg:order-2 animate-fade-in-up">
-            <h2 className="text-4xl lg:text-5xl font-bold text-medical-dark mb-6">
+        {/* Contenedor con imagen de fondo */}
+        <div 
+          className="relative rounded-2xl overflow-hidden min-h-[700px] lg:min-h-[800px] flex items-center"
+          style={{
+            backgroundImage: 'url(/images/nosotros.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'left center',
+          }}
+        >
+          {/* Overlay para mejor legibilidad del contenido derecho */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-white"></div>
+          
+          {/* Contenido encima del fondo - Lado derecho */}
+          <div className="relative z-10 w-full lg:w-1/2 lg:ml-auto px-6 lg:px-12 py-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-medical-dark mb-6 animate-fade-in-up">
               Quiénes Somos
             </h2>
-            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+            <p className="text-lg text-gray-700 mb-10 leading-relaxed animate-fade-in-up">
               Somos una institución especializada en ortopedia, insumos biomédicos y cirugía, comprometida con la salud integral de nuestros pacientes. Nuestra trayectoria es el reflejo de nuestra dedicación y profesionalismo.
             </p>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up">
               {features.map((feature, idx) => (
                 <div 
                   key={idx}

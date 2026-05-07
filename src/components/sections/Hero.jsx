@@ -49,14 +49,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Placeholder Visual Derecha */}
+          {/* Imagen Visual Derecha */}
           <div className="flex items-center justify-center animate-fade-in">
-            <div className="w-full aspect-square lg:aspect-auto lg:h-[500px] bg-gradient-to-br from-medical-gray to-medical-light rounded-2xl flex items-center justify-center border border-medical-gray">
-              <div className="text-center">
-                <div className="text-6xl mb-4 opacity-20">📋</div>
-                <p className="text-gray-400 text-lg">Espacio para imagen médica</p>
-                <p className="text-gray-300 text-sm mt-2">Aquí irá una composición visual profesional</p>
-              </div>
+            <div className="w-full aspect-square lg:aspect-auto lg:h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-medical-gray">
+              <img 
+                src="/images/hero.png" 
+                alt="Especialistas en tu salud"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
