@@ -2,14 +2,14 @@ import Card from '../ui/Card';
 
 export default function ObrasSociales() {
   const obras = [
-    { name: 'OPSECON', image: '/images/obras-sociales/opsecon.jpg' },
-    { name: 'OSDE', image: '/images/obras-sociales/osde.jpg' },
-    { name: 'Mediplus', image: '/images/obras-sociales/mediplus.jpg' },
-    { name: 'Sancor', image: '/images/obras-sociales/sancor.jpg' },
-    { name: 'IOMA', image: '/images/obras-sociales/ioma.jpg' },
-    { name: 'Farmaplan', image: '/images/obras-sociales/farmaplan.jpg' },
-    { name: 'Yoga', image: '/images/obras-sociales/yoga.jpg' },
-    { name: 'Cartilla Privada', image: '/images/obras-sociales/cartilla-privada.jpg' },
+    { name: 'OPSECON', image: '/images/obras-sociales/opsecon.png' },
+    { name: 'OSUTHGRA', image: '/images/obras-sociales/osuthgra.png' },
+    { name: 'DAS', image: '/images/obras-sociales/das.png' },
+    { name: 'SIB', image: '/images/obras-sociales/sib.png' },
+    { name: 'ANDAR', image: '/images/obras-sociales/andar.png' },
+    { name: 'ART', image: '/images/obras-sociales/art.png' },
+    { name: 'CdC', image: '/images/obras-sociales/cdc.png' },
+    { name: 'OMINT', image: '/images/obras-sociales/omint.png' },
   ];
 
   return (
@@ -18,41 +18,34 @@ export default function ObrasSociales() {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-medical-dark mb-6">
-            Obras Sociales y Cartillas
+            Clientes
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Trabajamos con las principales obras sociales y cartillas médicas para facilitarte el acceso a nuestros servicios.
+            Todos nuestros clientes avalan nuestro profesionalismo
           </p>
         </div>
 
         {/* Obras Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {obras.map((obra, idx) => (
             <Card 
               key={idx}
-              variant="elevated"
-              className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] animate-fade-in-up"
-              style={{ animationDelay: `${idx * 0.05}s` }}
+              variant="default"
+              className="flex items-center justify-center h-40 overflow-hidden transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] animate-fade-in-up border-0 shadow-none"
+              style={{ 
+                animationDelay: `${idx * 0.05}s`
+              }}
             >
               {/* Imagen de la Obra Social */}
-              <div className="w-full h-32 bg-medical-light flex items-center justify-center border-b border-medical-gray overflow-hidden">
-                {obra.image ? (
-                  <img 
-                    src={obra.image} 
-                    alt={obra.name}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="text-3xl opacity-30">🏢</div>
-                )}
-              </div>
-
-              {/* Nombre de la Obra Social */}
-              <div className="p-4 flex items-center justify-center flex-1">
-                <h3 className="text-center text-sm lg:text-base font-semibold text-medical-dark">
-                  {obra.name}
-                </h3>
-              </div>
+              {obra.image ? (
+                <img 
+                  src={obra.image} 
+                  alt={obra.name}
+                  className="w-full h-full object-contain p-4"
+                />
+              ) : (
+                <div className="text-3xl opacity-30">🏢</div>
+              )}
             </Card>
           ))}
         </div>
