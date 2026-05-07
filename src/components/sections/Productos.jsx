@@ -40,6 +40,21 @@ export default function Productos() {
     },
   ];
 
+  const marcas = [
+    { name: 'Marca 1', image: '/images/marcas/marca-1.png' },
+    { name: 'Marca 2', image: '/images/marcas/marca-2.png' },
+    { name: 'Marca 3', image: '/images/marcas/marca-3.png' },
+    { name: 'Marca 4', image: '/images/marcas/marca-4.png' },
+    { name: 'Marca 5', image: '/images/marcas/marca-5.png' },
+    { name: 'Marca 6', image: '/images/marcas/marca-6.png' },
+    { name: 'Marca 7', image: '/images/marcas/marca-7.png' },
+    { name: 'Marca 8', image: '/images/marcas/marca-8.png' },
+    { name: 'Marca 9', image: '/images/marcas/marca-9.png' },
+    { name: 'Marca 10', image: '/images/marcas/marca-10.png' },
+    { name: 'Marca 11', image: '/images/marcas/marca-11.png' },
+    { name: 'Marca 12', image: '/images/marcas/marca-12.png' },
+  ];
+
   return (
     <section id="productos" className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
@@ -96,6 +111,40 @@ export default function Productos() {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* Principales Marcas */}
+        <div className="mt-20 pt-20 border-t border-medical-gray">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <h3 className="text-3xl lg:text-4xl font-bold text-medical-dark mb-4">
+              Principales Marcas Comercializadas
+            </h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Contamos con las mejores marcas del mercado en ortopedia e insumos médicos
+            </p>
+          </div>
+
+          {/* Marcas Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {marcas.map((marca, idx) => (
+              <Card 
+                key={idx}
+                variant="default"
+                className="flex items-center justify-center h-40 bg-white hover:shadow-md transition-all duration-300 animate-fade-in-up overflow-hidden"
+                style={{ animationDelay: `${idx * 0.05}s` }}
+              >
+                {marca.image ? (
+                  <img 
+                    src={marca.image} 
+                    alt={marca.name}
+                    className="w-full h-full object-contain p-4"
+                  />
+                ) : (
+                  <div className="text-center text-gray-400 text-sm font-medium">{marca.name}</div>
+                )}
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

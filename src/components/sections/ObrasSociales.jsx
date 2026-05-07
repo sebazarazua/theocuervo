@@ -2,14 +2,14 @@ import Card from '../ui/Card';
 
 export default function ObrasSociales() {
   const obras = [
-    { name: 'OPSECON', highlighted: true },
-    { name: 'OSDE' },
-    { name: 'Mediplus' },
-    { name: 'Sancor' },
-    { name: 'IOMA' },
-    { name: 'Farmaplan' },
-    { name: 'Yoga' },
-    { name: 'Cartilla Privada' },
+    { name: 'OPSECON', image: '/images/obras-sociales/opsecon.jpg' },
+    { name: 'OSDE', image: '/images/obras-sociales/osde.jpg' },
+    { name: 'Mediplus', image: '/images/obras-sociales/mediplus.jpg' },
+    { name: 'Sancor', image: '/images/obras-sociales/sancor.jpg' },
+    { name: 'IOMA', image: '/images/obras-sociales/ioma.jpg' },
+    { name: 'Farmaplan', image: '/images/obras-sociales/farmaplan.jpg' },
+    { name: 'Yoga', image: '/images/obras-sociales/yoga.jpg' },
+    { name: 'Cartilla Privada', image: '/images/obras-sociales/cartilla-privada.jpg' },
   ];
 
   return (
@@ -30,36 +30,28 @@ export default function ObrasSociales() {
           {obras.map((obra, idx) => (
             <Card 
               key={idx}
-              variant={obra.highlighted ? 'elevated' : 'default'}
-              className={`
-                flex items-center justify-center p-8 min-h-[140px] 
-                transition-all duration-300 hover:shadow-md
-                animate-fade-in-up
-                ${obra.highlighted ? 'border-2 border-medical-dark lg:col-span-2 lg:row-span-2' : ''}
-              `}
+              variant="elevated"
+              className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-md hover:translate-y-[-4px] animate-fade-in-up"
               style={{ animationDelay: `${idx * 0.05}s` }}
             >
-              <div className="text-center">
-                {obra.highlighted ? (
-                  <>
-                    <div className="text-5xl font-bold text-medical-dark mb-2">
-                      {obra.name.split('').length}
-                    </div>
-                    <h3 className="text-2xl font-bold text-medical-dark">
-                      {obra.name}
-                    </h3>
-                    <p className="text-xs text-gray-500 mt-2">Destacada</p>
-                  </>
+              {/* Imagen de la Obra Social */}
+              <div className="w-full h-32 bg-medical-light flex items-center justify-center border-b border-medical-gray overflow-hidden">
+                {obra.image ? (
+                  <img 
+                    src={obra.image} 
+                    alt={obra.name}
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
-                  <>
-                    <div className="w-12 h-12 bg-medical-light rounded-full mx-auto mb-3 flex items-center justify-center">
-                      <div className="text-lg opacity-30">🏢</div>
-                    </div>
-                    <h3 className="text-sm lg:text-base font-semibold text-medical-dark">
-                      {obra.name}
-                    </h3>
-                  </>
+                  <div className="text-3xl opacity-30">🏢</div>
                 )}
+              </div>
+
+              {/* Nombre de la Obra Social */}
+              <div className="p-4 flex items-center justify-center flex-1">
+                <h3 className="text-center text-sm lg:text-base font-semibold text-medical-dark">
+                  {obra.name}
+                </h3>
               </div>
             </Card>
           ))}
