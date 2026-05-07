@@ -27,8 +27,8 @@ export default function Contacto() {
               <div>
                 <h3 className="text-lg font-semibold text-medical-dark mb-1">Dirección</h3>
                 <p className="text-gray-600">
-                  Avenida Principal 123<br />
-                  Buenos Aires, Argentina
+                  Adolfo Alsina 1433 Piso 4 A, C1088<br />
+                  Ciudad Autónoma de Buenos Aires, Argentina
                 </p>
               </div>
             </div>
@@ -43,8 +43,8 @@ export default function Contacto() {
               <div>
                 <h3 className="text-lg font-semibold text-medical-dark mb-1">Teléfono</h3>
                 <p className="text-gray-600">
-                  <a href="tel:+541123456789" className="hover:text-medical-dark transition-colors">
-                    +54 11 2345-6789
+                  <a href="tel:43814939" className="hover:text-medical-dark transition-colors">
+                    4381-4939
                   </a><br />
                   Atención: Lunes a Viernes 9:00-18:00
                 </p>
@@ -61,8 +61,8 @@ export default function Contacto() {
               <div>
                 <h3 className="text-lg font-semibold text-medical-dark mb-1">Email</h3>
                 <p className="text-gray-600">
-                  <a href="mailto:info@ortopediabourbon.com" className="hover:text-medical-dark transition-colors">
-                    info@ortopediabourbon.com
+                  <a href="mailto:info@ortopediabourbon.com.ar" className="hover:text-medical-dark transition-colors">
+                    info@ortopediabourbon.com.ar
                   </a>
                 </p>
               </div>
@@ -82,18 +82,37 @@ export default function Contacto() {
             </div>
           </div>
 
-          {/* Mapa Placeholder */}
-          <div className="animate-fade-in">
-            <div className="w-full h-[400px] bg-medical-light rounded-2xl flex items-center justify-center border border-medical-gray overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="text-center">
-                <div className="text-6xl mb-4 opacity-20">🗺️</div>
-                <p className="text-gray-400 text-lg">Mapa interactivo</p>
-                <p className="text-gray-300 text-sm mt-2">Ubicación de nuestra sucursal</p>
-              </div>
+          {/* Mapa Interactivo */}
+          <div className="animate-fade-in space-y-6">
+            {/* Mapa Google Maps Embebido */}
+            <div className="w-full h-[400px] lg:h-[450px] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border border-medical-gray">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.7320728826364!2d-58.38073!3d-34.60546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaa8d4e4e4e9%3A0xce1207f2274b27e9!2sOrtopedia%20Bourbon!5e0!3m2!1ses!2sar!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación Ortopedia Bourbon"
+              />
             </div>
 
+            {/* Botón Cómo Llegar */}
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full"
+              onClick={() => window.open(
+                'https://www.google.com/maps/place/Ortopedia+Bourbon/@-34.60546,-58.38073,15z',
+                '_blank'
+              )}
+            >
+              Cómo llegar →
+            </Button>
+
             {/* Info adicional */}
-            <div className="mt-6 p-6 bg-medical-light rounded-xl border border-medical-gray">
+            <div className="p-6 bg-medical-light rounded-xl border border-medical-gray">
               <h3 className="font-semibold text-medical-dark mb-3">Horario de atención</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex justify-between">
