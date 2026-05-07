@@ -53,6 +53,14 @@ export default function Productos() {
     { name: 'Marca 10', image: '/images/marcas/marca-10.png' },
     { name: 'Marca 11', image: '/images/marcas/marca-11.png' },
     { name: 'Marca 12', image: '/images/marcas/marca-12.png' },
+    { name: 'Placeholder 1', image: '/images/marcas/abbvie.png' },
+    { name: 'Placeholder 2', image: '/images/marcas/abbott.png' },
+    { name: 'Placeholder 3', image: '/images/marcas/biogen.png' },
+    { name: 'Placeholder 4', image: '/images/marcas/fresenius.png' },
+    { name: 'Placeholder 5', image: '/images/marcas/nutricia.png' },
+    { name: 'Placeholder 6', image: '/images/marcas/hollister.png' },
+    { name: 'Placeholder 7', image: '/images/marcas/coloplast.png' },
+    { name: 'Placeholder 9', image: '/images/marcas/hospira.png' },
   ];
 
   return (
