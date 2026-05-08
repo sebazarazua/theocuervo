@@ -109,13 +109,7 @@ export default function Productos() {
                   </p>
                 </div>
 
-                {/* Link o Action */}
-                <div className="mt-6 pt-4 border-t border-medical-gray">
-                  <button className="text-medical-dark font-semibold text-sm hover:text-medical-accent transition-colors duration-300 inline-flex items-center gap-2">
-                    Conocer más
-                    <span>→</span>
-                  </button>
-                </div>
+            
               </div>
             </Card>
           ))}
