@@ -42,7 +42,7 @@ export default function Nosotros() {
   ];
 
   return (
-    <section id="nosotros" className="py-20 lg:py-32 bg-white" ref={sectionRef}>
+    <section id="nosotros" className="py-20 lg:py-32 bg-white border-t border-medical-gray" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div
           className={`rounded-2xl bg-gray-50 border border-medical-gray p-6 lg:p-12 transition-all duration-700 ease-out ${
