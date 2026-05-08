@@ -11,7 +11,7 @@ export default function Productos() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        setIsVisible(prev => prev || entry.isIntersecting);
       },
       {
         threshold: 0.25,
@@ -88,8 +88,8 @@ export default function Productos() {
   return (
     <section id="productos" className="py-20 lg:py-32 bg-white" ref={sectionRef}>
       <div
-        className={`max-w-7xl mx-auto px-4 lg:px-8 transition-all duration-700 ease-out ${
-          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+        className={`max-w-7xl mx-auto px-4 lg:px-8 transition-opacity duration-700 ease-out ${
+          isVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
         {/* Header */}

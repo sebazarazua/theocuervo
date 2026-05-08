@@ -17,13 +17,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between py-2">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <button
+            onClick={() => {
+              document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+              setIsMenuOpen(false);
+            }}
+            className="flex-shrink-0 flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-300"
+          >
             <img 
               src="/images/logo.png" 
               alt="Ortopedia Bourbon Logo"
               className="h-32 w-auto"
             />
-          </div>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

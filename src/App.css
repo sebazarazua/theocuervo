@@ -8,12 +8,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #ffffff;
   color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 /* Scrollbar personalizada */
@@ -67,4 +69,9 @@ body {
 :focus-visible {
   outline: 2px solid #0f3a5e;
   outline-offset: 2px;
+}
+
+/* Scroll margin para secciones con navbar sticky */
+section {
+  scroll-margin-top: 150px;
 }
