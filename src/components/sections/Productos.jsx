@@ -1,6 +1,28 @@
+import { useEffect, useRef, useState } from 'react';
 import Card from '../ui/Card';
 
 export default function Productos() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   const categories = [
     {
       title: 'Sillas de Ruedas',
@@ -64,10 +86,14 @@ export default function Productos() {
   ];
 
   return (
-    <section id="productos" className="py-20 lg:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+    <section id="productos" className="py-20 lg:py-32 bg-white" ref={sectionRef}>
+      <div
+        className={`max-w-7xl mx-auto px-4 lg:px-8 transition-all duration-700 ease-out ${
+          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'
+        }`}
+      >
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-medical-dark mb-6">
             Nuestros Productos
           </h2>
@@ -82,7 +108,7 @@ export default function Productos() {
             <Card 
               key={idx}
               variant="elevated"
-              className="flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-300 animate-fade-in-up"
+              className="flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-300"
               style={{ animationDelay: `${idx * 0.1}s` }}
             >
               {/* Imagen del Producto */}
@@ -117,7 +143,7 @@ export default function Productos() {
 
         {/* Principales Marcas */}
         <div className="mt-20 pt-20 border-t border-medical-gray">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12">
             <h3 className="text-3xl lg:text-4xl font-bold text-medical-dark mb-4">
               Principales Marcas Comercializadas
             </h3>
@@ -132,7 +158,7 @@ export default function Productos() {
               <Card 
                 key={idx}
                 variant="default"
-                className="flex items-center justify-center h-40 bg-white hover:shadow-md transition-all duration-300 animate-fade-in-up overflow-hidden"
+                className="flex items-center justify-center h-40 bg-white hover:shadow-md transition-all duration-300 overflow-hidden"
                 style={{ animationDelay: `${idx * 0.05}s` }}
               >
                 {marca.image ? (
