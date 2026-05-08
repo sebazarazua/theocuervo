@@ -14,7 +14,7 @@ export default function Productos() {
         setIsVisible(prev => prev || entry.isIntersecting);
       },
       {
-        threshold: 0.05,
+        threshold: 0.25,
       }
     );
 

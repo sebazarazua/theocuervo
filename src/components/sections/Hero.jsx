@@ -44,18 +44,18 @@ export default function Hero() {
           </div>
 
           {/* Puntos destacados */}
-          <div className="grid grid-cols-3 gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full">
             <div className="text-center">
               <div className="text-3xl lg:text-4xl font-bold text-medical-dark">30+</div>
-              <div className="text-sm text-gray-600 mt-2">Años de experiencia</div>
+              <div className="text-xs md:text-sm text-gray-600 mt-2">Años de experiencia</div>
             </div>
             <div className="text-center">
               <div className="text-3xl lg:text-4xl font-bold text-medical-dark">Especialistas</div>
-              <div className="text-sm text-gray-600 mt-2">Profesionales</div>
+              <div className="text-xs md:text-sm text-gray-600 mt-2">Profesionales</div>
             </div>
             <div className="text-center">
               <div className="text-3xl lg:text-4xl font-bold text-medical-dark">100%</div>
-              <div className="text-sm text-gray-600 mt-2">Dedicación</div>
+              <div className="text-xs md:text-sm text-gray-600 mt-2">Dedicación</div>
             </div>
           </div>
         </div>
