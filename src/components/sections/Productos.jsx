@@ -1,28 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
 import Card from '../ui/Card';
 
 export default function Productos() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(prev => prev || entry.isIntersecting);
-      },
-      {
-        threshold: 0.25,
-      }
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
-  }, []);
-
   const categories = [
     {
       title: 'Sillas de Ruedas',
@@ -86,12 +64,8 @@ export default function Productos() {
   ];
 
   return (
-    <section id="productos" className="py-20 lg:py-32 bg-white" ref={sectionRef}>
-      <div
-        className={`max-w-7xl mx-auto px-4 lg:px-8 transition-opacity duration-700 ease-out ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
+    <section id="productos" className="py-20 lg:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-medical-dark mb-6">
